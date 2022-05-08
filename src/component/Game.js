@@ -14,6 +14,10 @@ export default function Game() {
   const [g8, setG8] = useState([]);
   const [g9, setG9] = useState([]);
 
+  const reset = () => {
+    window.location.reload();
+  }
+
   //Make into one
   const [l, setL] = useState({
     one: [],
@@ -23,89 +27,89 @@ export default function Game() {
   });
 
   const turn = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG('X')
+      setG('X');
     } else {
-      setG('O')
+      setG('O');
     }
   }
 
   const turn2 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG2('X')
+      setG2('X');
     } else {
-      setG2('O')
+      setG2('O');
     }
   }
   const turn3 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG3('X')
+      setG3('X');
     } else {
-      setG3('O')
+      setG3('O');
     }
   }
 
   const turn4 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG4('X')
+      setG4('X');
     } else {
-      setG4('O')
+      setG4('O');
     }
   }
 
   const turn5 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG5('X')
+      setG5('X');
     } else {
-      setG5('O')
+      setG5('O');
     }
   }
   const turn6 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG6('X')
+      setG6('X');
     } else {
-      setG6('O')
+      setG6('O');
     }
   }
 
   const turn7 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG7('X')
+      setG7('X');
     } else {
-      setG7('O')
+      setG7('O');
     }
   }
 
   const turn8 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG8('X')
+      setG8('X');
     } else {
-      setG8('O')
+      setG8('O');
     }
   }
   const turn9 = () => {
-    setState(!state)
-    {React.createElement('p', {onClick: turn})}
+    setState(!state);
+    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG9('X')
+      setG9('X');
     } else {
-      setG9('O')
+      setG9('O');
     }
   }
 
@@ -123,28 +127,30 @@ export default function Game() {
 const meep = () => {
    return <div className="container" id="h">
    {React.createElement('div', {class: 'test', onClick: turn}, `${g}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn2}, `${g2}`)}   
+   {React.createElement('div', {class: 'test', onClick: turn2}, `${g2}`)}  
    {React.createElement('div', {class: 'test', onClick: turn3}, `${g3}`)}   
 
-   {React.createElement('div', {class: 'test', onClick: turn4}, `${g4}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn5}, `${g5}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn6}, `${g6}`)}   
+   {React.createElement('div', {class: 'test', onClick: turn4}, `${g4}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn5}, `${g5}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn6}, `${g6}`)}  
 
-   {React.createElement('div', {class: 'test', onClick: turn7}, `${g7}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn8}, `${g8}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn9}, `${g9}`)}   
+   {React.createElement('div', {class: 'test', onClick: turn7}, `${g7}`)}
+   {React.createElement('div', {class: 'test', onClick: turn8}, `${g8}`)} 
+   {React.createElement('div', {class: 'test', onClick: turn9}, `${g9}`)} 
    </div>
 } 
 
-const beep = () => {
-  if(document.getElementsByClassName('test').innnerHTML.includes('X')) {
-    console.log('yes')
-  } else {
-    console.log('asdasd')
-  }
-}
-
+// const beep = () => {
+//   if(React.getElementsByClassName('test').innnerHTML.includes('X')) {
+//     console.log('yes')
+//   } else {
+//     console.log('asdasd')
+//   }
+// }
 // beep()
+
+// console.log(React.getElementById('test'))
+// let check = React.getElementById('test').innnerHTML.includes('X')
 // if(check.textContent.includes('X')) {
 //   console.log('YES X')
 // } else if(check.textContent.includes('O')) {
@@ -158,6 +164,8 @@ const beep = () => {
       {meep()}
       {state === true && <h1>X TURN</h1>}
       {state === false && <h1>O TURN</h1>}
+      <br />
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
