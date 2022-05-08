@@ -13,3 +13,7 @@ h1 {
   box-sizing: border-box;
   padding: 80px; 
 }
+
+div {
+  text-align: center;
+}
