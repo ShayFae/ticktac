@@ -19,12 +19,12 @@ export default function Game() {
   }
 
   //Make into one
-  const [l, setL] = useState({
-    one: [],
-    two: [],
-    three: [],
-    four: [],
-  });
+  // const [l, setL] = useState({
+  //   one: [],
+  //   two: [],
+  //   three: [],
+  //   four: [],
+  // });
 
   const turn = () => {
     setState(!state);
@@ -113,49 +113,36 @@ export default function Game() {
     }
   }
 
-  ///???
-  // const turn4 = () => {
-  //   setState(!state)
-  //   {React.createElement('p', {onClick: turn}, 'HELLO')}
-  //   if(state === true) {
-  //     setL({...l, })
-  //   } else {
-  //     setL({...l, })
-  //   }
-  // }
-
 const meep = () => {
    return <div className="container" id="h">
-   {React.createElement('div', {class: 'test', onClick: turn}, `${g}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn2}, `${g2}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn3}, `${g3}`)}   
+   {React.createElement('div', {class: 'test', onClick: turn, id: '1'}, `${g}`)}   
+   {React.createElement('div', {class: 'test', onClick: turn2, id: '2'}, `${g2}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn3, id: '3'}, `${g3}`)}   
 
-   {React.createElement('div', {class: 'test', onClick: turn4}, `${g4}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn5}, `${g5}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn6}, `${g6}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn4, id: '4'}, `${g4}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn5, id: '5'}, `${g5}`)}  
+   {React.createElement('div', {class: 'test', onClick: turn6, id: '6'}, `${g6}`)}  
 
-   {React.createElement('div', {class: 'test', onClick: turn7}, `${g7}`)}
-   {React.createElement('div', {class: 'test', onClick: turn8}, `${g8}`)} 
-   {React.createElement('div', {class: 'test', onClick: turn9}, `${g9}`)} 
+   {React.createElement('div', {class: 'test', onClick: turn7, id: '7'}, `${g7}`)}
+   {React.createElement('div', {class: 'test', onClick: turn8, id: '8'}, `${g8}`)} 
+   {React.createElement('div', {class: 'test', onClick: turn9, id: '9'}, `${g9}`)} 
    </div>
 } 
 
-// const beep = () => {
-//   if(React.getElementsByClassName('test').innnerHTML.includes('X')) {
-//     console.log('yes')
-//   } else {
-//     console.log('asdasd')
-//   }
-// }
-// beep()
+//Combos
+//Ro
+//1-2-3
+//4-5-6
+//7-8-9
 
-// console.log(React.getElementById('test'))
-// let check = React.getElementById('test').innnerHTML.includes('X')
-// if(check.textContent.includes('X')) {
-//   console.log('YES X')
-// } else if(check.textContent.includes('O')) {
-//   console.log('YES O')
-// }
+//Col
+//1-4-7
+//2-5-8
+//3-6-9
+
+//di
+//1-5-9
+//3-5-7
 
   return(
     <div id="h">
