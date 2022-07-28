@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Game.css'
 
 export default function Game() {
@@ -13,6 +13,10 @@ export default function Game() {
   const [g7, setG7] = useState([]);
   const [g8, setG8] = useState([]);
   const [g9, setG9] = useState([]);
+
+  const [countO, setCountO] = useState(0);
+  const [countX, setCountX] = useState(0);
+
 
   const reset = () => {
     window.location.reload();
@@ -34,6 +38,10 @@ export default function Game() {
     } else {
       setG('O');
     }
+    // if(id1.innerHTML === "O") {
+    //   console.log("yes")
+    //   // setCountO(prev => prev++)
+    // }
   }
 
   const turn2 = () => {
@@ -129,6 +137,30 @@ const meep = () => {
    </div>
 } 
 
+const id1 = document.getElementById('1');
+const id2 = document.getElementById('2');
+
+const beep = () => {
+  console.log(id1.innerHTML, id2.innerHTML)
+  if(id1.innerHTML === "O" || id1.innerHTML === "O") {
+    setCountO(1)
+  }
+  if(id1.innerHTML === "X" || id1.innerHTML === "X") {
+    setCountX(1)
+  }
+}
+
+  useEffect(() => {
+    if(id1.innerHTML === "O"){
+      console.log("YES")
+    }
+    // console.log("NO")
+  }, [])
+
+
+console.log(id1, id2)
+// console.log(id1.innerHTML)
+
 //Combos
 //Ro
 //1-2-3
@@ -151,6 +183,15 @@ const meep = () => {
       {meep()}
       {state === true && <h1>X TURN</h1>}
       {state === false && <h1>O TURN</h1>}
+      <section>
+          <ul>
+            <p>O</p>
+            <p>X</p>
+
+            <p>O</p>
+            <p>X</p>
+          </ul>
+      </section>
       <br />
       <button onClick={reset}>Reset</button>
     </div>
