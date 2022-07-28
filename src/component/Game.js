@@ -21,41 +21,29 @@ export default function Game() {
   const reset = () => {
     window.location.reload();
   }
-
-  //Make into one
-  // const [l, setL] = useState({
-  //   one: [],
-  //   two: [],
-  //   three: [],
-  //   four: [],
-  // });
+  
+  let x = <img src={require("https://cdn-icons-png.flaticon.com/512/75/75519.png")}/>
 
   const turn = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG('X');
+      setG("X");
     } else {
       setG('O');
     }
-    // if(id1.innerHTML === "O") {
-    //   console.log("yes")
-    //   // setCountO(prev => prev++)
-    // }
   }
 
-  const turn2 = () => {
+  const turn2 = (() => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
-      setG2('X');
+      setG2(<img src="https://cdn-icons-png.flaticon.com/512/75/75519.png"/>
+      );
     } else {
       setG2('O');
     }
-  }
+  })
   const turn3 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG3('X');
     } else {
@@ -65,7 +53,6 @@ export default function Game() {
 
   const turn4 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG4('X');
     } else {
@@ -75,7 +62,6 @@ export default function Game() {
 
   const turn5 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG5('X');
     } else {
@@ -84,7 +70,6 @@ export default function Game() {
   }
   const turn6 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG6('X');
     } else {
@@ -94,7 +79,6 @@ export default function Game() {
 
   const turn7 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG7('X');
     } else {
@@ -104,7 +88,6 @@ export default function Game() {
 
   const turn8 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG8('X');
     } else {
@@ -113,7 +96,6 @@ export default function Game() {
   }
   const turn9 = () => {
     setState(!state);
-    {React.createElement('p', {onClick: turn})};
     if(state === true) {
       setG9('X');
     } else {
@@ -122,18 +104,18 @@ export default function Game() {
   }
 
 const meep = () => {
-   return <div className="container" id="h">
-   {React.createElement('div', {class: 'test', onClick: turn, id: '1'}, `${g}`)}   
-   {React.createElement('div', {class: 'test', onClick: turn2, id: '2'}, `${g2}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn3, id: '3'}, `${g3}`)}   
+   return <div className="container">
+   {React.createElement('p', {class: 'test', onClick: turn, id: '1'}, `${g}`)}   
+   {React.createElement('p', {class: 'test', onClick: turn2, id: '2'}, `${g2}`)}  
+   {React.createElement('p', {class: 'test', onClick: turn3, id: '3'}, `${g3}`)}   
 
-   {React.createElement('div', {class: 'test', onClick: turn4, id: '4'}, `${g4}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn5, id: '5'}, `${g5}`)}  
-   {React.createElement('div', {class: 'test', onClick: turn6, id: '6'}, `${g6}`)}  
+   {React.createElement('p', {class: 'test', onClick: turn4, id: '4'}, `${g4}`)}  
+   {React.createElement('p', {class: 'test', onClick: turn5, id: '5'}, `${g5}`)}  
+   {React.createElement('p', {class: 'test', onClick: turn6, id: '6'}, `${g6}`)}  
 
-   {React.createElement('div', {class: 'test', onClick: turn7, id: '7'}, `${g7}`)}
-   {React.createElement('div', {class: 'test', onClick: turn8, id: '8'}, `${g8}`)} 
-   {React.createElement('div', {class: 'test', onClick: turn9, id: '9'}, `${g9}`)} 
+   {React.createElement('p', {class: 'test', onClick: turn7, id: '7'}, `${g7}`)}
+   {React.createElement('p', {class: 'test', onClick: turn8, id: '8'}, `${g8}`)} 
+   {React.createElement('p', {class: 'test', onClick: turn9, id: '9'}, `${g9}`)} 
    </div>
 } 
 
@@ -150,16 +132,12 @@ const beep = () => {
   }
 }
 
-  useEffect(() => {
-    if(id1.innerHTML === "O"){
-      console.log("YES")
-    }
-    // console.log("NO")
-  }, [])
-
-
-console.log(id1, id2)
-// console.log(id1.innerHTML)
+  // useEffect(() => {
+  //   if(id1.innerHTML === "O"){
+  //     console.log("YES")
+  //   }
+  //   // console.log("NO")
+  // }, [])
 
 //Combos
 //Ro
@@ -177,22 +155,12 @@ console.log(id1, id2)
 //3-5-7
 
   return(
-    <div id="h">
-      {/* <div id="hello">hello</div> */}
+    <div>
       <h1>Tic Tac Toe</h1>
       {meep()}
       {state === true && <h1>X TURN</h1>}
       {state === false && <h1>O TURN</h1>}
-      <section>
-          <ul>
-            <p>O</p>
-            <p>X</p>
-
-            <p>O</p>
-            <p>X</p>
-          </ul>
-      </section>
-      <br />
+      <br/>
       <button onClick={reset}>Reset</button>
     </div>
   );
